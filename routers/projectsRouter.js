@@ -1,20 +1,7 @@
 const projectsModel = require("../data/helpers/projectModel");
-// const customMW = require("../customMiddleware");
 
 const express = require("express");
 const router = express.Router();
-
-// const characterLimit = customMW.characterLimit;
-// const stringCheck = customMW.stringCheck;
-// const elementExists = customMW.elementExists;
-// const boolean = customMW.boolean;
-
-// router.use("/", elementExists(name));
-// router.use("/", stringCheck(name));
-// router.use("/", characterLimit(name));
-// router.use("/", elementExists(description));
-// router.use("/", stringCheck(description));
-// router.use("/", boolean(completed));
 
 router.get("/", (req, res) => {
   projectsModel
@@ -88,7 +75,7 @@ router.post("/", (req, res) => {
     if (
       !(
         typeof newProject.completed === "boolean" ||
-        newProject.description instanceof boolean
+        newProject.completed instanceof Boolean
       )
     ) {
       res.status(400).json({ error: "completed must be a boolean" });

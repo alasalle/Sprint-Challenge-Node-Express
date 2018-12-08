@@ -13,7 +13,7 @@ server.use(helmet());
 server.use(morgan("dev"));
 
 server.use("/api/projects", projectsRouter);
-// server.use("/api/actions", actionsRouter);
+server.use("/api/actions", actionsRouter);
 
 
 server.listen(PORT, err => {
